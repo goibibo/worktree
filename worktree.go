@@ -1,10 +1,5 @@
 package worktree
 
-import (
-	"log"
-	"time"
-)
-
 type CommandTree struct {
 	Reducer             func(inp []interface{}) interface{}
 	LeafFunctions       []func(inp interface{}) interface{}
@@ -83,11 +78,7 @@ func (t *CommandTree) Run(_ interface{}) interface{} {
 func wrap(c chan ResultFunction, child int, todo func(inp interface{}) interface{}, inp interface{}) {
 
 	var result ResultFunction
-
-	startTime := time.Now()
 	result.Result = todo(inp)
-	endTime := time.Now()
-	log.Println("WRAP TOTAL ", endTime.Sub(startTime))
 	result.Child = child
 
 	c <- result
