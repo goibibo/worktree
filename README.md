@@ -6,8 +6,6 @@ Create a nested work tree  where each node has mapper child functions and a redu
 
 Inspired by https://github.com/goibibo/lithosphere/blob/master/tree.go
 
-Sample example https://github.com/goibibo/worktree/blob/master/example.go
-
 **Usage:**
 
     type TwoArgs struct {
